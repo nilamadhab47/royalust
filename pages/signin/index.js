@@ -5,6 +5,8 @@ import Layout from "@/components/Layout";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 import LoadingSpinner from "@/components/LoadingSpinner";
 
 const SignIn = () => {
@@ -74,6 +76,8 @@ const SignIn = () => {
       } else {
         // Incorrect email or password
         console.log('Invalid credentials');
+        toast.error('Invalid email or password')
+        
         // Handle the case when the sign-in credentials are incorrect
       }
     }, 2000);
@@ -144,11 +148,7 @@ const SignIn = () => {
                   checkboxlabelStyle={{ paddingLeft: "26px" }}
                 />
               </div>
-              <Link href="/signin/forgotpassword">
-                <span className="text-xs text-white hover:underline hover:underline-offset-2 cursor-pointer">
-                  Forgot Password
-                </span>
-              </Link>
+             
             </div>
             {loading ? (
               <button
@@ -181,6 +181,7 @@ const SignIn = () => {
             </p>
           </form>
         </div>
+        <ToastContainer />
       </Layout>
     </>
   );
