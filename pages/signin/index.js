@@ -173,7 +173,7 @@ const SignIn = () => {
             )}
 
             <p className="md:text-sm text-[9px] text-dialogSubTxt">
-              New to Video On Demand?
+              New to Royalust?
               <Link href="/register" className="text-white">
                 {" "}
                 Register Now.
